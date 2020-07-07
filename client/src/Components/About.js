@@ -23,34 +23,58 @@ const About=(props)=>{
             console.log(content)
     }
 
+    const viewMoreC=(e)=>{
+        setContent("Familiar with .NET framework and MySQL database")
+    }
+
     return(
         <>
             <h1 className='abouttitle'style={{textDecoration:'underlined'}}>About Me</h1>
-            <div className="photo">
-            <img className="pic"
-                src={Photo}
-                alt="Profile picture of Summer Bakr"
-            />
+
+            <div class="row">
+            <div class="col-sm-6">
+                <div className="photo">
+                    <img className="pic"
+                        src={Photo}
+                        alt="Profile picture of Summer Bakr"
+                    /> 
+                    <div class="overlay">
+                        <div class="text">Summer Bakr</div>
+                    </div>
+                </div> 
         </div>
-        <div className='content'>
+            
+            <div class="col-sm-4">
+            <div className='content'>
             <p id='bio'>I am a recent college graduate that became fascinated with software after working in a hospital and seeing firsthand the transformative power of technology. I wanted to become part of the movement of people pioneering change through technology, and set out on a mission to do just that by immersing myself fully in coding and technology. </p>
-        </div>
+            </div>
+            
+            </div>
+            
+            </div>
+            
+        
         
             <h2 className="myskills"> My Skills</h2>
+            <div class='col-sm'>
             <div className='skillbtns'>
                 
                 <button id="Python" className="skillbtn" onClick={(e)=>viewMorePython(e)}>Python</button>
                 <button id="Mern" className="skillbtn" onClick={(e)=>viewMoreMern(e) }>MERN</button>
                 <button id="HTML" className="skillbtn" onClick={(e)=>viewMoreHTML(e) }>HTML/CSS</button>
+                <button id="C#" className="skillbtn" onClick={(e)=>viewMoreC(e)}>C#</button></div>
+            
+            { content ? < div id="response"><p  id="responsestyle">{content}</p> </div> : ''}
+            
             </div>
-                <div>
-                { content ? <p style={{marginLeft: '540px', marginTop: '100px', backgroundColor:'plum', width: '400px', color:"black"}}>{content}</p> : ''}
-                </div>
+          
+                
+                
     <h2 className="education">Education and Professional Experience</h2>
     <Timeline lineColor={'#ddd'}>
     <TimelineItem
         key="001"
-        dateText="03/2020 – Present"
+        dateText="03/2020 – 06/2020"
         dateInnerStyle={{ background: '#9A2AD2', color: '#000' }}
         style={{ color: '#9A2AD2' }}
     >

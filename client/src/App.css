@@ -2,7 +2,18 @@
   text-align: center;
   background-color: rgb(49, 0, 49);
   color: white;
+
 }
+
+@media (max-width: 415px){
+
+  .App{
+    width: 100%;
+    height: auto;
+  }
+
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -29,9 +40,172 @@
   }
 }
 
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  margin: .5rem;
+}
+
+.nav-links{
+  display: flex;
+
+}
+
+
+.nav-links li {
+  list-style: none;
+  color: white;
+  display: inline-block;
+}
+.nav-link {
+  text-decoration: none;
+  padding: 1rem;
+  display: inline-block;
+  color: black;
+}
+
+.nav-link:hover{
+  color: purple;
+}
+
+.toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gray;
+  color: white;
+}
+.brand-title{
+  font-size: 1.5rem;
+  margin: .5rem;
+  color: black;
+  
+
+}
+
+.brand-title a:hover{
+  text-decoration: none;
+
+}
+
+.navbar-links ul{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  color: black;
+
+}
+.navbar-links li {
+  list-style: none;
+  color: black;
+}
+.navbar-links li a {
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  color: black;
+}
+
+.navbar-links li a:hover{
+  color: purple;
+}
+
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+@media (max-width:500px)
+{
+  .toggle-button{
+    display: flex;
+
+  }
+  .navbar-links{
+    display: none;
+    width: 100%;
+  }
+
+  #navbar{
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+  .navbar-links ul{
+    flex-direction: column;
+    width: 100%;
+
+  }
+
+  .navbar-links ul{
+    text-align: center;
+
+  }
+  .navbar-links li a {
+    padding: .5rem 1rem;
+
+  }
+
+  .navbar-links.active{
+    display: flex;
+  }
+
+
+  }
+
+  
+
+
 .header {
   width: 900px;
   margin: auto;
+}
+
+@media (max-width: 500px){
+  .header{
+    width: 400px;
+  }
 }
 
 .skillbtn {
@@ -55,6 +229,8 @@
   margin-right: 20px;
 }
 
+
+
 .education{
   margin-top: 200px;
   margin-bottom: 100px;
@@ -71,6 +247,8 @@
   
 }
 
+
+
 .subgreeting {
   font-size: 40px;
   color: white;
@@ -81,18 +259,66 @@
   
 }
 
+
+
 .typing {
   display: inline-block;
   color: plum;
   font-size: 40px;
   margin: 0px;
 }
+
 .about {
 font-size: larger;
 width: 500px;
 margin: auto;
 }
+@media(max-width: 415px){
+  .greeting{
+    width: 400px;
+    font-size: 35px;
+  
+    margin-top: 140px;
+  }
 
+  .subgreeting{
+    margin: auto;
+    font-size: 20px;
+  }
+
+  .typing{
+    font-size: 20px;
+    margin-left: 5px;
+    padding: 0px;
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+  .about {
+    margin:auto;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+  }
+  .about{
+    margin-left: 40px;
+  }
+  .about p{
+    font-size: 30px;
+    width: 300px;
+
+  }
+  
+}
+
+@media(min-width:450px) and (max-width: 770px) {
+.about {
+  width: 350px;
+}
+.about p{
+  font-size: 30px;
+  width: 500px;
+  margin-left: 140px;
+}
+}
 .city{
   width: 100%;
   height: 100%;
@@ -102,18 +328,48 @@ margin: auto;
 }
 
 .photo {
-  width: 500px;
-  height: 500px;
+  width: 290px;
+  height: 400px;
   display: inline-block;
   margin: auto;
-  margin-right: 100px;
+  margin-right: 20px;
+  position: relative;
 
 }
 .pic {
-  width: 80%;
+  margin-top: 80px;
+  width: 290px;
+  height: 400px;
+  margin-bottom: 100px;
+  border: 5px solid rgb(122, 122, 122);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 100%;
-  border-radius: 60%;
-  margin-bottom: 250px;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  
+}
+
+.photo:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .about{
   font-family: sans-serif;
@@ -123,11 +379,28 @@ margin: auto;
   width: 800px;
 }
 
+@media (max-width: 415px){
+  .pic{
+    margin-left: 40px;
+  }
+  #bio {
+    margin-top: 90px;
+  }
+
+}
+
+
 .contact{
   margin: auto;
   width: 600px;
   padding-bottom: 100px;
   margin-top: 220px;
+}
+
+@media (max-width: 415px){
+  .contact{
+    width: 350px;
+  }
 }
 
 .social {
@@ -150,6 +423,13 @@ margin: auto;
   height: 100%;
 }
 
+@media (max-width: 415px){
+  .social{
+    margin-top: 110px;
+    
+  }
+}
+
 .looking{
   margin-bottom: 80px;
 }
@@ -168,6 +448,73 @@ margin: auto;
   
 }
 
+#responsestyle{
+  margin: auto;
+  margin-top: 100px;
+  background-color:plum;
+  width: 400px;
+  color:black;
+}
+
+
+@media (max-width: 415px){
+  #abouttitle{
+    font-size: smaller;
+  }
+  
+  #bio{
+    font-size: 20px;
+    width: 250px;
+    
+  }
+
+  .content{
+    margin-left: 80px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    
+  }
+
+  .pic{
+    margin-right: 100px;
+    width: 250px;
+    height: 350px;
+    margin-bottom: 0px;
+
+
+  }
+  
+
+  #response{
+    width: 150px;
+    margin-top:50px;
+    
+  }
+  #responsestyle{
+    margin: auto;
+    margin-left: 65px;
+    width: 250px;
+  }
+  
+}
+
+@media(min-width:450px) and (max-width: 770px) {
+  #bio{
+    font-size: 20px;
+    width:200px;
+  }
+  
+  .content{
+    margin-left: 100px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    
+  }
+  #responsestyle{
+    margin-left: 190px;
+  }
+}
+
 
 .popup{
   width: 200px;
@@ -184,17 +531,38 @@ margin: auto;
 .carousel{
   width: 800px;
   height: 500px;
+  margin-bottom: 200px;
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 300px;
-  margin-left: 30px;
+  margin-left: 50px;
+  
 
 }
 
 .description{
-  width: 500px;
+  width: 400px;
   display: inline-block;
   vertical-align: top;
+}
+@media(max-width: 415px){
+  .carousel{
+    width: 300px;
+    margin-left: 0px;
+    margin-top: 50px;
+    
+  
+  }
+  .description{
+    width: 300px;
+  }
+}
+
+@media(min-width:450px) and (max-width: 770px) {
+.carousel{
+  width: 500px;
+  margin-top: 50px;
+  margin-left:10px;
+}
 }
 .title{
   margin-top: 50px;

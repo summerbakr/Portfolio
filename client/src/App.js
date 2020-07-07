@@ -12,33 +12,48 @@ import Project from './Components/Project.js';
 
 
 
+
 function App() {
-  
+
+const toggleClass=(e)=>{
+  const toggleButton=document.getElementsByClassName('toggle-button')[0]  
+  const navbarLinks=document.getElementsByClassName('navbar-links')[0]
+
+  toggleButton.addEventListener("click", ()=>{
+    navbarLinks.classList.toggle("active")
+})
+}
 
 
   return (
     <div className="App">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Welcome</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/About">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/Projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/Contact">Contact</a>
-                </li>
-              </ul>
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="brand-title" href="/">Welcome</a>
+            
+            <div href="#" class="toggle-button" onClick={(e)=>toggleClass(e)}>
+            
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
             </div>
+
+              <div class="navbar-links">
+              <ul>
+                <li>
+                  <a href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                  <a  href="/About">About</a>
+                </li>
+                <li>
+                  <a href="/Projects">Projects</a>
+                </li>
+                <li>
+                  <a id="outlier" href="/Contact">Contact</a>
+                </li>
+                </ul>
+              </div>
+              
           </nav>
   
     <Router>
